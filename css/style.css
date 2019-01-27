@@ -1,0 +1,14 @@
+ tr , td{
+    border: 1px solid black;
+  }
+
+  table{
+      margin: 0 auto;
+      height: 150px;
+      margin-top: 200px;
+      text-align: center;
+      line-height: 2.6;
+      width:70%;
+  
+  }
+
