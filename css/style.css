@@ -4,11 +4,15 @@
      
  } */
  
+  #one , #Two , #Three , #four ,#five ,#six {
+    border-bottom: 1px solid #000;
+    
+ }
+
+  #Two , #Three , #five ,#six , #eight , #nine{
+ border-left: 1px solid #000;
+ }
  
- tr , td{
-    border: 1px solid black;
-  
-  }
 
   td{
     width: 10%;

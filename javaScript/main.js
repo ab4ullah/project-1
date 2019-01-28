@@ -1,23 +1,17 @@
-//var userInput = ["X","O","X","O","X","O","X","O","X"];
-
-
-//var cells = $('td'); 
-//for (var i = 0; i < cells.length; i++) { 
-  // cells[i].onclick = $('td').text("Hello");
-//}
-
 
 let currentPlayer = "X";
 
 var ScoreX = 0;
 var ScoreO = 0;
 
+var numOfplay = 0;
+
 
 $('td').on('click', Play)  
 
 function Play(event){
     var CurrentCell = event.target;
-    
+    numOfplay += 1;
   if($(CurrentCell).text() !== 'X' && $(CurrentCell).text() !== 'O' ){
       
       $(CurrentCell).text(currentPlayer);
@@ -28,10 +22,9 @@ function Play(event){
         $(CurrentCell).css("background-color","rgb(159,142,255)"); 
       }
       //console.log($(CurrentCell).text());
+      
+      //console.log(numOfplay);
       ChekeTheWinner();
-
-      ChangeThePlayer ();
-
   }
 
   else if (currentPlayer === 'X' || currentPlayer === 'O' )
@@ -66,7 +59,7 @@ function ChekeTheWinner(){
     }
 
 
-    if(four==="X" && five==="X" && six==="X" ){
+    else if(four==="X" && five==="X" && six==="X" ){
         alert("X is win")
         restartTheGame();
         scroreX();
@@ -74,103 +67,110 @@ function ChekeTheWinner(){
     }
     
 
-    if(seven==="X" && eight==="X" && nine==="X" ){
+   else if(seven==="X" && eight==="X" && nine==="X" ){
         alert("X is win")
         restartTheGame();
         scroreX();
     }
 
 
-    if(one==="X" && four==="X" && seven==="X" ){
+   else if(one==="X" && four==="X" && seven==="X" ){
         alert("X is win")
         restartTheGame();
         scroreX();
     }
 
-    if(two==="X" && five==="X" && eight==="X" ){
+   else if(two==="X" && five==="X" && eight==="X" ){
         alert("X is win")
         restartTheGame();
         scroreX();
     }
 
-    if(Three==="X" && six==="X" && nine==="X" ){
+   else if(Three==="X" && six==="X" && nine==="X" ){
         alert("X is win")
         restartTheGame();
         scroreX();
     }
 
-    if(Three==="X" && five==="X" && seven==="X" ){
+   else if(Three==="X" && five==="X" && seven==="X" ){
         alert("X is win")
         restartTheGame();
         scroreX();
     }
 
-    if(nine==="X" && five==="X" && one==="X" ){
+   else if(nine==="X" && five==="X" && one==="X" ){
         alert("X is win")
         restartTheGame();
         scroreX();
     }
     
     // if for O
-    if(one==="O" && two==="O" && Three==="O" ){
+   else if(one==="O" && two==="O" && Three==="O" ){
         alert("O is win")
-        restartTheGame();
         scroreO();
+        restartTheGame();
     }
 
 
-    if(four==="O" && five==="O" && six==="O" ){
+  else if(four==="O" && five==="O" && six==="O" ){
         alert("O is win")
-        restartTheGame();
         scroreO();
+        restartTheGame();
     }
     
 
-    if(seven==="O" && eight==="O" && nine==="O" ){
+   else if(seven==="O" && eight==="O" && nine==="O" ){
         alert("O is win")
-        restartTheGame();
         scroreO();
+        restartTheGame();
     }
 
 
-    if(one==="O" && four==="O" && seven==="O" ){
+   else if(one==="O" && four==="O" && seven==="O" ){
         alert("O is win")
-        restartTheGame();
         scroreO();
+        restartTheGame();
     }
 
-    if(two==="O" && five==="O" && eight==="O" ){
+    else if(two==="O" && five==="O" && eight==="O" ){
         alert("O is win")
-        restartTheGame();
         scroreO();
+        restartTheGame();
     }
 
-    if(Three==="O" && six==="O" && nine==="O" ){
+    else if(Three==="O" && six==="O" && nine==="O" ){
         alert("O is win")
-        restartTheGame();
         scroreO();
+        restartTheGame();
     }
 
-    if(Three==="O" && five==="O" && seven==="O" ){
+   else if(Three==="O" && five==="O" && seven==="O" ){
         alert("O is win")
-        restartTheGame();
         scroreO();
+        restartTheGame();
     }
 
-    if(nine==="O" && five==="O" && one==="O" ){
+   else if(nine==="O" && five==="O" && one==="O" ){
         alert("O is win")
-        restartTheGame();
         scroreO();
+        restartTheGame();
     }
 
+    else if (numOfplay === 9){
+        alert("no one win");
+        restartTheGame();
+
+    } else {
+        ChangeThePlayer ();
     }
+
+
 
     
-    //$($this).css('background','yellow');
-   
-    //if(table.tr[0].td[0] === true){
-        //console.log(col + "" + row);
-   // }
+
+}
+
+  
 
    function ChangeThePlayer (){
      // change turn
@@ -186,20 +186,25 @@ function ChekeTheWinner(){
     currentPlayer = "X";
     $('td').empty();
     $('td').css("background-color", "");
+    numOfplay = 0;
   }
 
   function scroreX(){
     ScoreX +=1; 
-    // console.log(ScoreX);
+    
     $('#scoreX').text("Player One (X) Score : " + ScoreX);
   }
 
 
   function scroreO(){
     ScoreO +=1; 
-    // console.log(ScoreX);
-    $('#scoreO').text("Player One (O) Score : " + ScoreO);
+    
+    $('#scoreO').text("Player Two (O) Score : " + ScoreO);
   }
+  
+
+
+  
   
 
 
