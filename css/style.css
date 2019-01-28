@@ -30,7 +30,7 @@
  button{
      display: block;
      margin: 0 auto;
-     margin-top: 100px;
+     margin-top: 50px;
      width: 250px;
      height: 40px;
      border-radius: 6px;
@@ -43,3 +43,13 @@
     background-color: rgb(39, 40, 46);
     border: 2px solid rebeccapurple;
  }
+
+ #scoreX{
+     margin-top: 30px;
+     text-align: center;
+ }
+
+ #scoreO{
+    margin-top: 30px;
+    text-align: center;
+}

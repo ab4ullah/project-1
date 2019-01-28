@@ -9,7 +9,8 @@
 
 let currentPlayer = "X";
 
-let ScoreX = 0;
+var ScoreX = 0;
+var ScoreO = 0;
 
 
 $('td').on('click', Play)  
@@ -60,7 +61,7 @@ function ChekeTheWinner(){
     if(one==="X" && two==="X" && Three==="X" ){
         alert("X is win")
         restartTheGame();
-
+        scroreX();
      
     }
 
@@ -68,84 +69,98 @@ function ChekeTheWinner(){
     if(four==="X" && five==="X" && six==="X" ){
         alert("X is win")
         restartTheGame();
-        ScoreX ++;
-        $('p').text("The X sore " + ScoreX);
+        scroreX();
+        
     }
     
 
     if(seven==="X" && eight==="X" && nine==="X" ){
         alert("X is win")
         restartTheGame();
+        scroreX();
     }
 
 
     if(one==="X" && four==="X" && seven==="X" ){
         alert("X is win")
         restartTheGame();
+        scroreX();
     }
 
     if(two==="X" && five==="X" && eight==="X" ){
         alert("X is win")
         restartTheGame();
+        scroreX();
     }
 
     if(Three==="X" && six==="X" && nine==="X" ){
         alert("X is win")
         restartTheGame();
+        scroreX();
     }
 
     if(Three==="X" && five==="X" && seven==="X" ){
         alert("X is win")
         restartTheGame();
+        scroreX();
     }
 
     if(nine==="X" && five==="X" && one==="X" ){
         alert("X is win")
         restartTheGame();
+        scroreX();
     }
     
     // if for O
     if(one==="O" && two==="O" && Three==="O" ){
         alert("O is win")
         restartTheGame();
+        scroreO();
     }
 
 
     if(four==="O" && five==="O" && six==="O" ){
         alert("O is win")
         restartTheGame();
+        scroreO();
     }
     
 
     if(seven==="O" && eight==="O" && nine==="O" ){
         alert("O is win")
         restartTheGame();
+        scroreO();
     }
 
 
     if(one==="O" && four==="O" && seven==="O" ){
         alert("O is win")
         restartTheGame();
+        scroreO();
     }
 
     if(two==="O" && five==="O" && eight==="O" ){
         alert("O is win")
         restartTheGame();
+        scroreO();
     }
 
     if(Three==="O" && six==="O" && nine==="O" ){
         alert("O is win")
         restartTheGame();
+        scroreO();
     }
 
     if(Three==="O" && five==="O" && seven==="O" ){
         alert("O is win")
         restartTheGame();
+        scroreO();
     }
 
     if(nine==="O" && five==="O" && one==="O" ){
         alert("O is win")
         restartTheGame();
+        scroreO();
     }
 
     }
@@ -168,9 +183,22 @@ function ChekeTheWinner(){
    }
 
    function restartTheGame() {
+    currentPlayer = "X";
     $('td').empty();
     $('td').css("background-color", "");
-    currentPlayer = "X";
+  }
+
+  function scroreX(){
+    ScoreX +=1; 
+    // console.log(ScoreX);
+    $('#scoreX').text("Player One (X) Score : " + ScoreX);
+  }
+
+
+  function scroreO(){
+    ScoreO +=1; 
+    // console.log(ScoreX);
+    $('#scoreO').text("Player One (O) Score : " + ScoreO);
   }
   
 
