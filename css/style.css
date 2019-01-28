@@ -1,14 +1,45 @@
+ /* body{
+    background: 
+    url("../images/op.jpg") repeat  #131E27  ;
+     
+ } */
+ 
+ 
  tr , td{
     border: 1px solid black;
-  }
-
-  table{
-      margin: 0 auto;
-      height: 150px;
-      margin-top: 200px;
-      text-align: center;
-      line-height: 2.6;
-      width:70%;
   
   }
 
+  td{
+    width: 10%;
+    height: 100px;
+    font-size: 35px;
+    line-height: 100px;
+  }
+  
+  table{
+      margin: 0 auto;
+      height: 400px;
+      margin-top: 100px;
+      text-align: center;
+      width:30%;
+  
+  }
+
+
+ button{
+     display: block;
+     margin: 0 auto;
+     margin-top: 100px;
+     width: 250px;
+     height: 40px;
+     border-radius: 6px;
+     background-color: rgb(95, 118, 247);
+     color:white;
+     font-size: 20px;
+ }
+
+ button:hover{
+    background-color: rgb(39, 40, 46);
+    border: 2px solid rebeccapurple;
+ }
