@@ -29,8 +29,12 @@ table{
       width:30%;
   }
 
+
+#buttons{
+    text-align: center;
+}
+
 button{
-     display: block;
      margin: 0 auto;
      margin-top: 50px;
      width: 250px;
@@ -49,11 +53,13 @@ button:hover{
 #scoreX{
      margin-top: 40px;
      text-align: center;
+     font-size: 18px;
  }
 
 #scoreO{
     margin-top: 30px;
     text-align: center;
+    font-size: 18px;
 }
 
 
@@ -90,4 +96,17 @@ button:hover{
     top: 290px;
     right: 255px;
     display: none;
+}
+
+#playWitheComputer{
+    background-color:rgb(134, 114, 247);
+}
+
+a{
+    color:#fff;
+}
+
+a:hover{
+    color:#000;
+    text-decoration: none;
 }
