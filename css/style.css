@@ -1,37 +1,35 @@
- /* body{
+  /* body{
     background: 
-    url("../images/op.jpg") repeat  #131E27  ;
+    url("../images/gr.jpeg") repeat  #131E27  ;
      
- } */
+ }  */
  
-  #one , #Two , #Three , #four ,#five ,#six {
-    border-bottom: 1px solid #000;
+#one , #Two , #Three , #four ,#five ,#six {
+  border-bottom: 2px solid rgb(79, 79, 79);
     
- }
+}
 
-  #Two , #Three , #five ,#six , #eight , #nine{
- border-left: 1px solid #000;
- }
+#Two , #Three , #five ,#six , #eight , #nine{
+  border-left: 2px solid rgb(79, 79, 79);;
+}
  
-
-  td{
+td{
     width: 10%;
     height: 100px;
-    font-size: 35px;
+    font-size: 50px;
     line-height: 100px;
-  }
+}
   
-  table{
+table{
       margin: 0 auto;
       height: 400px;
-      margin-top: 100px;
+      margin-top: 60px;
       text-align: center;
+      color:#fff;
       width:30%;
-  
   }
 
-
- button{
+button{
      display: block;
      margin: 0 auto;
      margin-top: 50px;
@@ -43,17 +41,53 @@
      font-size: 20px;
  }
 
- button:hover{
+button:hover{
     background-color: rgb(39, 40, 46);
     border: 2px solid rebeccapurple;
  }
 
- #scoreX{
-     margin-top: 30px;
+#scoreX{
+     margin-top: 40px;
      text-align: center;
  }
 
- #scoreO{
+#scoreO{
     margin-top: 30px;
     text-align: center;
+}
+
+
+#test{
+    position: absolute;
+    top: 230px;
+    left: 250px;
+    font-size: 40px;
+    color: red;
+
+}
+
+#test2{
+    position: absolute;
+    top: 230px;
+    right: 250px;
+    font-size: 40px;
+    color: red;
+
+}
+
+
+#imgOne{
+    width: 120px;
+    position: absolute;
+    top: 290px;
+    left: 245px;
+    display: none;
+}
+
+#imgTwo{
+    width: 120px;
+    position: absolute;
+    top: 290px;
+    right: 255px;
+    display: none;
 }
