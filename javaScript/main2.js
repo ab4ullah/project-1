@@ -3,8 +3,8 @@
 let currentPlayer = "X";
 var ScoreX = 0;
 var ScoreO = 0;
+var ScoreTie = 0;
 var numOfplay = 0;
-
 
 
 // main event
@@ -52,7 +52,7 @@ function ChekeTheWinner() {
         //msgX();
         scroreX();
         restartTheGame();
-        
+
     }
 
     else if (four === "X" && five === "X" && six === "X") {
@@ -65,7 +65,7 @@ function ChekeTheWinner() {
 
     else if (seven === "X" && eight === "X" && nine === "X") {
         alert("X is win")
-       // msgX();
+        // msgX();
         restartTheGame();
         scroreX();
     }
@@ -80,7 +80,7 @@ function ChekeTheWinner() {
 
     else if (two === "X" && five === "X" && eight === "X") {
         alert("X is win")
-       // msgX();
+        // msgX();
         restartTheGame();
         scroreX();
     }
@@ -160,15 +160,16 @@ function ChekeTheWinner() {
 
     // if there is no winner and number of cell 9 
     else if (numOfplay === 9) {
-        alert("no one win");
+        scroreTie();
+        alert("Tie - no one win");
         restartTheGame();
 
-    // call change player function
+        // call change player function
     } else {
-        ChangeThePlayer(); 
+        ChangeThePlayer();
         $('#test').text("");
         $('#test2').text("");
-        $('img').css("display","none");
+        $('img').css("display", "none");
     }
 
 }
@@ -189,7 +190,7 @@ function restartTheGame() {
     $('td').empty();
     $('td').css("background-color", "");
     numOfplay = 0;
-   
+
 }
 
 function scroreX() {
@@ -201,6 +202,12 @@ function scroreX() {
 function scroreO() {
     ScoreO += 1;
     $('#scoreO').text("Player Two (O) Score : " + ScoreO);
+}
+
+
+function scroreTie() {
+    ScoreTie += 1;
+    $('#scoreTie').text("Tie  : " + ScoreTie);
 }
 
 

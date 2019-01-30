@@ -1,44 +1,16 @@
-var cell = ["one","Two","Three","four","five","six","seven","eight","nine"];
+var cell = ["one", "Two", "Three", "four", "five", "six", "seven", "eight", "nine"];
 
 
 // variables
 let currentPlayer = "X";
 var ScoreX = 0;
 var ScoreO = 0;
+var ScoreTie = 0;
 var numOfplay = 0;
-var numOfplayC = 1;
 
-function playWC (){
-    $('td').on('click', playWithComputer)
-}
 
 // main event
 $('td').on('click', playWithComputer)
-// main function (start the game)
-function Play(event) {
-    var CurrentCell = event.target;
-    // increase the number for every choice
-    numOfplay += 1;
-    // Check the position if empty ( not include x or o )
-    if ($(CurrentCell).text() !== 'X' && $(CurrentCell).text() !== 'O') {
-        // print the x or o one the cell
-        $(CurrentCell).text(currentPlayer);
-        if ($(CurrentCell).text() === 'X') {
-            $(CurrentCell).css("background-color", "rgb(114,142,255)");
-        }
-        else {
-            $(CurrentCell).css("background-color", "rgb(159,142,255)");
-        }
-        // call the the winner function
-        ChekeTheWinner();
-    }
-    // if the cell has value print invalid
-    else if (currentPlayer === 'X' || currentPlayer === 'O') {
-        alert("Invalid field")
-    }
-
-}
-
 
 function ChekeTheWinner() {
     var one = $('#one').text();
@@ -57,7 +29,7 @@ function ChekeTheWinner() {
         //msgX();
         scroreX();
         restartTheGame();
-        
+
     }
 
     else if (four === "X" && five === "X" && six === "X") {
@@ -70,7 +42,7 @@ function ChekeTheWinner() {
 
     else if (seven === "X" && eight === "X" && nine === "X") {
         alert("X is win")
-       // msgX();
+        // msgX();
         restartTheGame();
         scroreX();
     }
@@ -85,7 +57,7 @@ function ChekeTheWinner() {
 
     else if (two === "X" && five === "X" && eight === "X") {
         alert("X is win")
-       // msgX();
+        // msgX();
         restartTheGame();
         scroreX();
     }
@@ -164,37 +136,22 @@ function ChekeTheWinner() {
     }
 
     // if there is no winner and number of cell 9 
-    else if (numOfplay === 9) {
-        alert("no one win");
-        restartTheGame();
-
-    // call change player function
-    } else {
-        //ChangeThePlayer(); رجعها
-        $('#test').text("");
-        $('#test2').text("");
-        $('img').css("display","none");
+    else if(numOfplay >= 9){
+        scroreTie();
+        alert("Tie - no one win");
+        restartTheGame();} {
+       
     }
+
 
 }
 
-
-function ChangeThePlayer() {
-    // change Player
-    if (currentPlayer === 'X') {
-        currentPlayer = 'O'
-
-    } else {
-        currentPlayer = 'X'
-    }
-}
 
 function restartTheGame() {
     currentPlayer = "X";
     $('td').empty();
     $('td').css("background-color", "");
     numOfplay = 0;
-   
 }
 
 function scroreX() {
@@ -209,99 +166,54 @@ function scroreO() {
 }
 
 
+function scroreTie() {
+    ScoreTie += 1;
+    $('#scoreTie').text("Tie  : " + ScoreTie);
+}
+
+
 // function msgX(){
 //    $('#test').text(" X is Win");
 //    $('#test2').text(" X is Win");
 //    $('img').css("display","block");
 // }
 
-function playWithComputer(event){
-    numOfplay += 1;
+function playWithComputer(event) {
+    numOfplay += 2;
     $(CurrentCell).text(currentPlayer);
     var CurrentCell = event.target;
     // increase the number for every choice
-    
+
     console.log(numOfplay);
     // Check the position if empty ( not include x or o )
     if ($(CurrentCell).text() !== 'X' && $(CurrentCell).text() !== 'O') {
         // print the x or o one the cell
-       
+
         $(CurrentCell).text(currentPlayer);
         if ($(CurrentCell).text() === 'X') {
             $(CurrentCell).css("background-color", "rgb(114,142,255)");
         }
-        if($(CurrentCell).text() === 'X'){
-            numOfplay += 1;
+        if ($(CurrentCell).text() === 'X') {
+            // numOfplay += 1;
             // create an array to store the empty positions on the board
             var emptySpaces = []
             // loop through the board
-            for(let j = 0; j < cell.length; j++){
+            for (let j = 0; j < cell.length; j++) {
                 // if the position is empty, add it to our array
-                if($("#"+cell[j]).text() !== 'X' && $("#"+cell[j]).text() !== 'O'){
+                if ($("#" + cell[j]).text() !== 'X' && $("#" + cell[j]).text() !== 'O') {
                     emptySpaces.push(j)
                 }
             }
             // pick a random position from our emptySpaces array
             var randCell = emptySpaces[Math.floor(Math.random() * emptySpaces.length)];
             // add O to the randCell on the board
-            $("#"+cell[randCell]).text("O");
-            $("#"+cell[randCell]).css("background-color", "rgb(159,142,255)");
-            // for(var j of cell){
-            //     if($("#"+j).text() !== 'X' && $("#"+j).text() !== 'O'){
-                 
-            //         $("#"+j).text("O");
-            //         $("#"+j).css("background-color", "rgb(159,142,255)");
-            //        break;
-            //     }    
-            // }
-            //  if($('#Two').text() !== 'X' && $('#Two').text() !== 'O' ){
-            //     for(var j of cell){
-            //         if($("#"+j).text() !== 'X' && $("#"+j).text() !== 'O'){
-                     
-            //             $("#"+j).text("O");
-            //             $("#"+j).css("background-color", "rgb(159,142,255)");}    
-            //     }
-            
+            $("#" + cell[randCell]).text("O");
+            $("#" + cell[randCell]).css("background-color", "rgb(159,142,255)");
+
+
         }
 
-        // if($('#Two').text() === 'X'){
-        //     console.log("Hello");
-        //     if($('#Three').text() !== 'X' && $('#Three').text() !== 'O' ){
-        //     $('#Three').text("O");
-        //     $('#Three').css("background-color", "rgb(159,142,255)");}
-        // }
 
-        // if($('#Three').text() === 'X'){
-        //     console.log("Hello");
-        //     if($('#four').text() !== 'X' && $('#four').text() !== 'O' ){
-        //     $('#four').text("O");
-        //     $('#four').css("background-color", "rgb(159,142,255)");}
-        // }
-
-
-        // if($('#five').text() === 'X'){
-        //     console.log("Hello");
-        //     if($('#six').text() !== 'X' && $('#six').text() !== 'O' ){
-        //     $('#six').text("O");
-        //     $('#six').css("background-color", "rgb(159,142,255)");}
-        // }
-
-
-        // if($('#six').text() === 'X'){
-        //     console.log("Hello");
-        //     if($('#seven').text() !== 'X' && $('#seven').text() !== 'O' ){
-        //     $('#seven').text("O");
-        //     $('#seven').css("background-color", "rgb(159,142,255)");}
-        // }
-
-        // if($('#seven').text() === 'X'){
-        //     console.log("Hello");
-        //     if($('#eight').text() !== 'X' && $('#seven').text() !== 'O' ){
-        //     $('#eight').text("O");
-        //     $('#eight').css("background-color", "rgb(159,142,255)");}
-        // }
-
-        
         else {
             $(CurrentCell).css("background-color", "rgb(159,142,255)");
         }
@@ -314,4 +226,4 @@ function playWithComputer(event){
         alert("Invalid field")
     }
 
-    }
+}

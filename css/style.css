@@ -45,22 +45,43 @@ button{
      font-size: 20px;
  }
 
+ #restart{
+     margin-right: 10px;
+ }
+
 button:hover{
     background-color: rgb(39, 40, 46);
     border: 2px solid rebeccapurple;
  }
 
 #scoreX{
-     margin-top: 40px;
-     text-align: center;
-     font-size: 18px;
+    display: inline;
+   
  }
 
 #scoreO{
-    margin-top: 30px;
+    display: inline;
+    margin-left: 35px;
+}
+
+#scoreTie{
+    display: inline; 
+    margin-left: 35px;
+}
+
+#score{
+    margin-top: 50px;
     text-align: center;
     font-size: 18px;
+    background: rgba(156, 152, 184, 0.1);
+    width: 34%;
+    margin: 40px auto;
+    margin-bottom: 0px;
+    
+    
+    
 }
+
 
 
 #test{
@@ -109,4 +130,9 @@ a{
 a:hover{
     color:#000;
     text-decoration: none;
+}
+
+
+.so{
+    color:rgb(221, 71, 71);
 }
