@@ -1,3 +1,4 @@
+// Array for table cells
 var cell = ["one", "Two", "Three", "four", "five", "six", "seven", "eight", "nine"];
 
 
@@ -25,128 +26,77 @@ function ChekeTheWinner() {
 
     // if for X
     if (one === "X" && two === "X" && Three === "X") {
-        alert("X is win")
-        //msgX();
-        scroreX();
-        restartTheGame();
-
+        Xwin();
     }
 
     else if (four === "X" && five === "X" && six === "X") {
-        alert("X is win")
-        //msgX();
-        restartTheGame();
-        scroreX();
+        Xwin();
     }
-
 
     else if (seven === "X" && eight === "X" && nine === "X") {
-        alert("X is win")
-        // msgX();
-        restartTheGame();
-        scroreX();
+        Xwin();
     }
 
-
     else if (one === "X" && four === "X" && seven === "X") {
-        alert("X is win")
-        //msgX();
-        restartTheGame();
-        scroreX();
+        Xwin();
     }
 
     else if (two === "X" && five === "X" && eight === "X") {
-        alert("X is win")
-        // msgX();
-        restartTheGame();
-        scroreX();
+        Xwin();
     }
 
     else if (Three === "X" && six === "X" && nine === "X") {
-        alert("X is win")
-        //msgX();
-        restartTheGame();
-        scroreX();
+        Xwin();
     }
 
     else if (Three === "X" && five === "X" && seven === "X") {
-        alert("X is win")
-        //msgX();
-        restartTheGame();
-        scroreX();
+        Xwin();
     }
 
     else if (nine === "X" && five === "X" && one === "X") {
-        alert("X is win")
-        //msgX();
-        restartTheGame();
-        scroreX();
+        Xwin();
     }
 
     // if for O
     else if (one === "O" && two === "O" && Three === "O") {
-        alert("O is win")
-        scroreO();
-        restartTheGame();
+        Owin();
     }
-
 
     else if (four === "O" && five === "O" && six === "O") {
-        alert("O is win")
-        scroreO();
-        restartTheGame();
+        Owin();
     }
-
 
     else if (seven === "O" && eight === "O" && nine === "O") {
-        alert("O is win")
-        scroreO();
-        restartTheGame();
+        Owin();
     }
 
-
     else if (one === "O" && four === "O" && seven === "O") {
-        alert("O is win")
-        scroreO();
-        restartTheGame();
+        Owin();
     }
 
     else if (two === "O" && five === "O" && eight === "O") {
-        alert("O is win")
-        scroreO();
-        restartTheGame();
+        Owin();
     }
 
     else if (Three === "O" && six === "O" && nine === "O") {
-        alert("O is win")
-        scroreO();
-        restartTheGame();
+        Owin();
     }
 
     else if (Three === "O" && five === "O" && seven === "O") {
-        alert("O is win")
-        scroreO();
-        restartTheGame();
+        Owin();
     }
 
     else if (nine === "O" && five === "O" && one === "O") {
-        alert("O is win")
-        scroreO();
-        restartTheGame();
+        Owin();
     }
 
     // if there is no winner and number of cell 9 
-    else if(numOfplay >= 9){
-        scroreTie();
-        alert("Tie - no one win");
-        restartTheGame();} {
-       
+    else if (numOfplay >= 9) {
+        TieMassge();
     }
-
-
 }
 
-
+// restart The Game function to restart the game
 function restartTheGame() {
     currentPlayer = "X";
     $('td').empty();
@@ -154,47 +104,40 @@ function restartTheGame() {
     numOfplay = 0;
 }
 
+// scroreX function to display who many time X wins 
 function scroreX() {
     ScoreX += 1;
     $('#scoreX').text("Player One (X) Score : " + ScoreX);
 }
 
-
+// scroreO function to display who many time O wins 
 function scroreO() {
     ScoreO += 1;
     $('#scoreO').text("Player Two (O) Score : " + ScoreO);
 }
 
-
+// scroreTie function to display who many time Tie
 function scroreTie() {
     ScoreTie += 1;
     $('#scoreTie').text("Tie  : " + ScoreTie);
 }
 
-
-// function msgX(){
-//    $('#test').text(" X is Win");
-//    $('#test2').text(" X is Win");
-//    $('img').css("display","block");
-// }
-
+// main function
 function playWithComputer(event) {
+    // increase the number for every choice 2 buz one for player and one for the computer
     numOfplay += 2;
     $(CurrentCell).text(currentPlayer);
     var CurrentCell = event.target;
-    // increase the number for every choice
-
+    // print to test
     console.log(numOfplay);
     // Check the position if empty ( not include x or o )
     if ($(CurrentCell).text() !== 'X' && $(CurrentCell).text() !== 'O') {
         // print the x or o one the cell
-
         $(CurrentCell).text(currentPlayer);
         if ($(CurrentCell).text() === 'X') {
             $(CurrentCell).css("background-color", "rgb(114,142,255)");
         }
         if ($(CurrentCell).text() === 'X') {
-            // numOfplay += 1;
             // create an array to store the empty positions on the board
             var emptySpaces = []
             // loop through the board
@@ -213,7 +156,6 @@ function playWithComputer(event) {
 
         }
 
-
         else {
             $(CurrentCell).css("background-color", "rgb(159,142,255)");
         }
@@ -223,7 +165,68 @@ function playWithComputer(event) {
 
     // if the cell has value print invalid
     else if (currentPlayer === 'X' || currentPlayer === 'O') {
-        alert("Invalid field")
+        InvalidCell();
     }
 
+}
+
+// function if the x win
+function Xwin() {
+    Swal.fire({
+        position: 'center',
+        type: 'success',
+        title: 'X is win',
+        showConfirmButton: false,
+        timer: 1500
+    });
+
+    restartTheGame();
+    scroreX();
+}
+
+// function if the O win
+function Owin() {
+    Swal.fire({
+        position: 'center',
+        type: 'success',
+        title: 'O is win',
+        showConfirmButton: false,
+        timer: 1500
+    });
+
+    scroreO();
+    restartTheGame();
+}
+
+// function if the no one win
+function TieMassge() {
+    Swal.fire({
+        position: 'center',
+        type: 'info',
+        title: 'Tie',
+        showConfirmButton: false,
+        timer: 1500
+    });
+    restartTheGame();
+    scroreTie();
+}
+
+// function if the cell not empty
+function InvalidCell() {
+    Swal.fire({
+        position: 'center',
+        type: 'error',
+        title: 'Invalid Cell',
+        showConfirmButton: false,
+        timer: 1500
+    });
+}
+
+$('img').on('click', instructions);
+
+function instructions() {
+    Swal.fire({
+        title: 'Instructions',
+        text: 'The object of Tic Tac Toe is to get three in a row. You play on a three by three game board. The first player is known as X and the second is O. Players alternate placing Xs and Os on the game board until either oppent has three in a row or all nine squares are filled. X always goes first, and in the event that no one has three in a row, Tie',
+    });
 }

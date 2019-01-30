@@ -1,16 +1,10 @@
-  /* body{
-    background: 
-    url("../images/gr.jpeg") repeat  #131E27  ;
-     
- }  */
- 
+/* Table style */
 #one , #Two , #Three , #four ,#five ,#six {
-  border-bottom: 2px solid rgb(79, 79, 79);
-    
+  border-bottom: 2px solid rgb(79, 79, 79);   
 }
 
 #Two , #Three , #five ,#six , #eight , #nine{
-  border-left: 2px solid rgb(79, 79, 79);;
+  border-left: 2px solid rgb(79, 79, 79);
 }
  
 td{
@@ -18,6 +12,11 @@ td{
     height: 100px;
     font-size: 50px;
     line-height: 100px;
+    cursor: pointer;
+}
+
+td:hover{
+    background: rgba(255,192,203, 0.2);
 }
   
 table{
@@ -25,11 +24,12 @@ table{
       height: 400px;
       margin-top: 60px;
       text-align: center;
-      color:#fff;
+      color:rgb(255, 255, 255);
       width:30%;
   }
+/* End of Table style */
 
-
+/* Buttons style */
 #buttons{
     text-align: center;
 }
@@ -41,22 +41,42 @@ button{
      height: 40px;
      border-radius: 6px;
      background-color: rgb(95, 118, 247);
-     color:white;
+     color:rgb(255, 255, 255);
      font-size: 20px;
  }
 
+/* restart Button style */
  #restart{
-     margin-right: 10px;
+     margin-right: 14px;
  }
 
 button:hover{
     background-color: rgb(39, 40, 46);
-    border: 2px solid rebeccapurple;
+    border: 2px solid rgb(102,51,153);
  }
 
+#playWitheComputer{
+    background-color:rgb(134, 114, 247);
+}
+
+a{
+    color:rgb(255, 255, 255);
+}
+
+a:hover{
+    color:rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+
+.spanForScore{
+    color:rgb(221, 71, 71);
+}
+/* End of Buttons style */
+
+/* paragraph (P) style */
 #scoreX{
     display: inline;
-   
  }
 
 #scoreO{
@@ -72,67 +92,33 @@ button:hover{
 #score{
     margin-top: 50px;
     text-align: center;
-    font-size: 18px;
+    font-size: 19px;
     background: rgba(156, 152, 184, 0.1);
-    width: 34%;
+    width: 36%;
     margin: 40px auto;
-    margin-bottom: 0px;
-    
-    
-    
+    margin-bottom: 0px;   
 }
+/* End of paragraph (P) style */
 
-
-
-#test{
+img{
     position: absolute;
-    top: 230px;
-    left: 250px;
-    font-size: 40px;
-    color: red;
-
+    top:10px;
+    right: 30px;
+    width: 70px;
 }
 
-#test2{
+#logo{
+    font-family: 'Staatliches', cursive;
     position: absolute;
-    top: 230px;
-    right: 250px;
-    font-size: 40px;
-    color: red;
-
+    top:25px;
+    left: 30px;
+    font-size: 35px;
 }
 
-
-#imgOne{
-    width: 120px;
-    position: absolute;
-    top: 290px;
-    left: 245px;
-    display: none;
+#h2One{
+    color:rgb(83, 53, 249);
 }
 
-#imgTwo{
-    width: 120px;
-    position: absolute;
-    top: 290px;
-    right: 255px;
-    display: none;
-}
-
-#playWitheComputer{
-    background-color:rgb(134, 114, 247);
-}
-
-a{
-    color:#fff;
-}
-
-a:hover{
-    color:#000;
-    text-decoration: none;
-}
-
-
-.so{
-    color:rgb(221, 71, 71);
+#h2Two{
+    color:rgb(102,51,153);
 }

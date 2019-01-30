@@ -4,17 +4,17 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> Tic Tac Toe - play with Friend </title>
+  <title> Tic Tac Toe - Two players </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
   <link rel="stylesheet" type="text/css" media="screen" href="css/reset.css" />
   <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
 
 </head>
 
 <body>
-
 
   <table>
     <tr>
@@ -37,26 +37,27 @@
   </table>
 
   <div id="score">
-    <p id="scoreX">Player One (<span class="so">X</span>) Score : <span class="so">0</span></p>
-    <p id="scoreO">Player Two (<span class="so">O</span>) Score : <span class="so">0</span></p>
-    <p id="scoreTie">Tie  : <span class="so">0</span></p>
-    </div>
+    <p id="scoreX">Player One (<span class="spanForScore">X</span>) Score : <span class="spanForScore">0</span></p>
+    <p id="scoreO">Player Two (<span class="spanForScore">O</span>) Score : <span class="spanForScore">0</span></p>
+    <p id="scoreTie">Tie : <span class="spanForScore">0</span></p>
+  </div>
 
   <div id="buttons">
-  <button id="restart" onclick="restartTheGame()">Restart the game </button>
-  <button id="playWitheComputer"><a href="index.html" >Play with computer</a></button>
+    <button id="restart" onclick="restartTheGame()">Restart the game </button>
+    <button id="playWitheComputer"><a href="index.html">One player</a></button>
   </div>
- 
-  <!-- <p id="test"></p>
-  <p id="test2"></p>
-  <img id="imgOne" src="images/tup.png">
-  <img id="imgTwo" src="images/tup.png"> -->
-  
 
+  <img src="images/list.png" alt="instructions" />
 
+  <h2 id="logo">Tic <span id="h2One">Tac</span> <span id="h2Two">Toe</span></h2>
 
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
     crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  <script src="sweetalert2/dist/sweetalert2.all.min.js"></script>
+
+  <!-- Include a polyfill for ES6 Promises (optional) for IE11 and UC Browser support -->
+  <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script>
   <script src="javaScript/main2.js"></script>
 
 </body>
