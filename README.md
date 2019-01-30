@@ -1,7 +1,7 @@
 # Tic Tac Toe
 
 ## Screenshot
-![Screenshot](https://raw.githubusercontent.com/https://github.com/ab4ullah/project-1/blob/master/images/Screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/ab4ullah/project-1/blob/master/images/Screenshot.png)
 
 ## Technologies
 1- HTML5
