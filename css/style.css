@@ -102,8 +102,8 @@ a:hover{
 
 img{
     position: absolute;
-    top:10px;
-    right: 30px;
+    top:5px;
+    left: 10px;
     width: 70px;
 }
 
@@ -111,7 +111,7 @@ img{
     font-family: 'Staatliches', cursive;
     position: absolute;
     top:25px;
-    left: 30px;
+    left: 70px;
     font-size: 35px;
 }
 
