@@ -21,6 +21,9 @@ I want to add different levels on one player mode and I want to allow to user to
 ## New features
 I used SweetAlert library.
 
+## The Game link 
+[Tic Tac Toe](https://ab4ullah.github.io/project-1/)
+
 ## Acknowledgements/Thanks
 I would like to thank :
 1- Michael Finneran
